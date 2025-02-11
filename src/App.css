@@ -1,0 +1,163 @@
+/* ====== Global Styles ====== */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  
+  .app-container {
+    display: flex;
+    height: 100vh;
+    transition: all 0.5s ease; 
+  }
+  
+  .app-container.collapsed .sidebar {
+    width: 80px;
+  }
+  
+  .app-container.collapsed .content {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+  
+  .app-container .content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 20px;
+    background-color: #f8f8f8;
+    transition: margin-left 0.5s ease, width 0.5s ease; 
+  }
+  
+  /* ====== Sidebar Styles ====== */
+  .sidebar {
+    background-color: #333;
+    color: white;
+    width: 250px;
+    height: 100%;
+    padding: 20px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: width 0.5s ease;
+  }
+  
+  .sidebar.collapsed {
+    width: 80px;
+  }
+  
+  .logo-container {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+  }
+  
+  .sidebar nav ul li {
+    margin-bottom: 15px;
+  }
+  
+  .sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center; 
+    padding: 10px;
+    transition: background 0.3s ease, padding 0.5s ease;
+}
+  
+  .sidebar nav ul li a:hover {
+    background-color: #007BFF;
+  }
+  
+  .sidebar nav ul li a .icon {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    display: flex;
+    align-items: center; 
+}
+
+  
+.sidebar.collapsed nav ul li a {
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.sidebar.collapsed nav ul li a .icon {
+  margin-right: 0;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+  
+  .sidebar.collapsed nav ul li a .label {
+    display: none;
+  }
+  
+  .active a {
+    background-color: #007BFF;
+  }
+  
+  /* ====== Toggle Button ====== */
+  .toggle-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.5s ease; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .toggle-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .toggle-button svg {
+    transition: transform 0.5s ease, opacity 0.5s ease; 
+  }
+  
+  .toggle-button svg.rotated {
+    transform: rotate(180deg); 
+  }
+  
+  /* ====== Media Queries for Mobile ====== */
+  @media (max-width: 768px) {
+    .app-container.collapsed .content {
+      margin-left: 80px;
+      width: calc(100% - 80px);
+    }
+  
+    .app-container .content {
+      margin-left: 80px;
+      width: calc(100% - 80px);
+    }
+  
+    .sidebar {
+      width: 80px;
+    }
+  
+    .sidebar.collapsed {
+      width: 80px;
+    }
+  }
+  
